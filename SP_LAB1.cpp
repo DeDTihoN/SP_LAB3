@@ -21,14 +21,6 @@ const ld eps=1e-9;
 map<char,bool>usedChars;
 map<string,bool>usedStrings;
 
-bool check (string s)
-{
-    for (int i=0;i<s.size();++i){
-        if (usedChars[s[i]])return 0;
-    }
-    return 1;
-}
-
 main ()
 {
     ios;
