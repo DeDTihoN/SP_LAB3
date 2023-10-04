@@ -198,7 +198,7 @@ string getW(finite_automaton& Automaton )
         bool flagFindedNewState=0;
         for (int i=0;i<States.size();++i){
             int v=States[i];
-            for (int Char=0;Char<Automaton.A;++Char){
+            for (int Char=0;Char<=Automaton.A;++Char){
                 for (int j=0;j<Automaton.f[v][Char].size();++j){
                     int to=Automaton.f[v][Char][j];
                     if (!used[to]){
