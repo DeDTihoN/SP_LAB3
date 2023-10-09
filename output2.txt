@@ -1,0 +1,168 @@
+< import , Reserved Word >
+< java , Identifier >
+< . , Punctuation >
+< io , Identifier >
+< . , Punctuation >
+< * , Operator >
+< ; , Punctuation >
+< import , Reserved Word >
+< java , Identifier >
+< . , Punctuation >
+< util , Identifier >
+< . , Punctuation >
+< * , Operator >
+< ; , Punctuation >
+< public , Reserved Word >
+< class , Reserved Word >
+< KeyboardReader , Identifier >
+< { , Punctuation >
+< public , Reserved Word >
+< static , Reserved Word >
+< void , Reserved Word >
+< main , Identifier >
+< ( , Punctuation >
+< String , Identifier >
+< [ , Punctuation >
+< ] , Punctuation >
+< args , Identifier >
+< ) , Punctuation >
+< throws , Reserved Word >
+< java , Identifier >
+< . , Punctuation >
+< io , Identifier >
+< . , Punctuation >
+< IOException , Identifier >
+< { , Punctuation >
+< String , Identifier >
+< s1 , Identifier >
+< ; , Punctuation >
+< String , Identifier >
+< s2 , Identifier >
+< ; , Punctuation >
+< double , Reserved Word >
+< num1 , Identifier >
+< , , Punctuation >
+< num2 , Identifier >
+< , , Punctuation >
+< product , Identifier >
+< ; , Punctuation >
+< // set up the buffered reader to read from the keyboard , Comment >
+< BufferedReader , Identifier >
+< br , Identifier >
+< = , Operator >
+< new , Reserved Word >
+< BufferedReader , Identifier >
+< ( , Punctuation >
+< new , Reserved Word >
+< InputStreamReader , Identifier >
+< ( , Punctuation >
+< System , Identifier >
+< . , Punctuation >
+< in , Identifier >
+< ) , Punctuation >
+< ) , Punctuation >
+< ; , Punctuation >
+< System , Identifier >
+< . , Punctuation >
+< out , Identifier >
+< . , Punctuation >
+< println , Identifier >
+< ( , Punctuation >
+< "Enter a line of input" , String >
+< ) , Punctuation >
+< ; , Punctuation >
+< s1 , Identifier >
+< = , Operator >
+< br , Identifier >
+< . , Punctuation >
+< readLine , Identifier >
+< ( , Punctuation >
+< ) , Punctuation >
+< ; , Punctuation >
+< System , Identifier >
+< . , Punctuation >
+< out , Identifier >
+< . , Punctuation >
+< println , Identifier >
+< ( , Punctuation >
+< "The line has " , String >
+< + , Operator >
+< s1 , Identifier >
+< . , Punctuation >
+< length , Identifier >
+< ( , Punctuation >
+< ) , Punctuation >
+< + , Operator >
+< " characters" , String >
+< ) , Punctuation >
+< ; , Punctuation >
+< System , Identifier >
+< . , Punctuation >
+< out , Identifier >
+< . , Punctuation >
+< println , Identifier >
+< ( , Punctuation >
+< '#' , Char >
+< ) , Punctuation >
+< ; , Punctuation >
+< System , Identifier >
+< . , Punctuation >
+< out , Identifier >
+< . , Punctuation >
+< println , Identifier >
+< ( , Punctuation >
+< "Breaking the line into tokens we get:" , String >
+< ) , Punctuation >
+< ; , Punctuation >
+< int , Reserved Word >
+< numTokens , Identifier >
+< = , Operator >
+< 0 , Number >
+< ; , Punctuation >
+< StringTokenizer , Identifier >
+< st , Identifier >
+< = , Operator >
+< new , Reserved Word >
+< StringTokenizer , Identifier >
+< ( , Punctuation >
+< s1 , Identifier >
+< ) , Punctuation >
+< ; , Punctuation >
+< while , Reserved Word >
+< ( , Punctuation >
+< st , Identifier >
+< . , Punctuation >
+< hasMoreTokens , Identifier >
+< ( , Punctuation >
+< ) , Punctuation >
+< ) , Punctuation >
+< { , Punctuation >
+< s2 , Identifier >
+< = , Operator >
+< st , Identifier >
+< . , Punctuation >
+< nextToken , Identifier >
+< ( , Punctuation >
+< ) , Punctuation >
+< ; , Punctuation >
+< numTokens , Identifier >
+< ++ , Operator >
+< ; , Punctuation >
+< System , Identifier >
+< . , Punctuation >
+< out , Identifier >
+< . , Punctuation >
+< println , Identifier >
+< ( , Punctuation >
+< "    Token " , String >
+< + , Operator >
+< numTokens , Identifier >
+< + , Operator >
+< " is: " , String >
+< + , Operator >
+< s2 , Identifier >
+< ) , Punctuation >
+< ; , Punctuation >
+< } , Punctuation >
+< } , Punctuation >
+< } , Punctuation >
