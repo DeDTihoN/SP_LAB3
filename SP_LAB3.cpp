@@ -69,7 +69,7 @@ char keywords[50][15]={"abstract","assert","boolean","break",
 "synchronized","this","throw","throws","transient",
 "try","volatile","void","while"};
 
-const string RegexNumber = R"(\d+(\.\d*)?|0[xX][0-9a-fA-F]+)";
+const string RegexNumber = R"(0x[0-9A-F]+|\d+(\.\d*)?)";
 const string RegexString = R"((\"[^\"]*\"))";
 const string RegexChar = R"('[^']')";
 const string RegexComment = R"(/\*[\s\S]*?\*/|//.*)";
@@ -138,7 +138,7 @@ struct State {
     map<char, int> transitions;
     string type;
 };
-State states[10000];
+State states[1000];
 int all=0;
 const int Identifier_V=500;
 
@@ -156,15 +156,17 @@ void add_digit_transition()
     add_transition(v1, v1, "0123456789");
     states[v1].type = "Number";
     int v2=++all;
-    add_transition(v1, v2, ".");
     add_transition(v2, v2, "0123456789");
     states[v2].type = "Number";
     int v3=++all;
     add_transition(0, v3, "0");
-    add_transition(v3, v2, ".");
+    int v5=++all;
+    add_transition(v1, v5, ".");
+    add_transition(v3, v5, ".");
+    add_transition(v5, v2, "0123456789");
     int v4=++all;
-    add_transition(v3, v4, "xX");
-    add_transition(v4, v4, "0123456789abcdefABCDEF");
+    add_transition(v3, v4, "x");
+    add_transition(v4, v4, "0123456789ABCDEF");
     states[v3].type = "Number";
     states[v4].type = "Number";
 }
@@ -395,8 +397,11 @@ void solve_with_automaton()
     Input.close();
     freopen("output2.txt", "w", stdout);
     for (const auto& entry : lexemesInOrder) {
-      if (entry.second!="Space")  cout << "< " << entry.first << " , " << entry.second << " >\n";
+      if (entry.second!="Space")  {
+            cout << "< " << entry.first << " , " << entry.second << " >\n";
+      }
     }
+
 }
 
 main ()
@@ -414,7 +419,6 @@ main ()
     auto time2 = chrono::duration_cast<chrono::nanoseconds>(finish2 - start2).count();
     cout << "Час виконання регулярними виразами: " << (ld)(time1 * 1e-6) << " секунд" << endl;
     cout << "Час виконання автоматом: " << (ld)(time2 * 1e-6) << " секунд" << endl;
-    
 }
 //8 4
 //1 2 3 1 2 3 1 2

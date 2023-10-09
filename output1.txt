@@ -1,17 +1,3 @@
-< import , Reserved Word >
-< java , Identifier >
-< . , Punctuation >
-< io , Identifier >
-< . , Punctuation >
-< * , Operator >
-< ; , Punctuation >
-< import , Reserved Word >
-< java , Identifier >
-< . , Punctuation >
-< util , Identifier >
-< . , Punctuation >
-< * , Operator >
-< ; , Punctuation >
 < public , Reserved Word >
 < class , Reserved Word >
 < KeyboardReader , Identifier >
